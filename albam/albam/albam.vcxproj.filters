@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="albam">
+      <UniqueIdentifier>{084515cb-b0b6-4595-adc9-bdf9026dfc30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="albam.cpp">
+      <Filter>albam</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="albam.h">
+      <Filter>albam</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
