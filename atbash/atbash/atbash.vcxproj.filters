@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="atbash">
+      <UniqueIdentifier>{590e687d-6936-48ca-adf6-1497111a5822}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="atbash.cpp">
+      <Filter>atbash</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="atbash.h">
+      <Filter>atbash</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
