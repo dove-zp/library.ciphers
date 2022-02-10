@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="avgad">
+      <UniqueIdentifier>{b42a745c-7100-4f84-be3c-f132e44dd72a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="avgad.cpp">
+      <Filter>avgad</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="avgad.h">
+      <Filter>avgad</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
