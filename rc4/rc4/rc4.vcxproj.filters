@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="rc4">
+      <UniqueIdentifier>{259d88ae-77e5-4d34-aaaa-90ef3755138b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="rc4.cpp">
+      <Filter>rc4</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rc4.h">
+      <Filter>rc4</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
