@@ -20,7 +20,7 @@ A collection of cipher algorithms.
 
 ## License
 
-This project is licensed under the [MIT License (Expat)](https://tldrlegal.com/license/mit-license). See the [LICENSE.md](./LICENSE.md) file for details.
+This project is licensed under the [MIT License (Expat)](https://tldrlegal.com/license/mit-license).
 
 <!--  -->
 
