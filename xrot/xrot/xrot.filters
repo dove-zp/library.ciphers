@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="xrot">
+      <UniqueIdentifier>{f397a0a0-f382-431d-969b-c0f5d67cf6e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="xrot.cpp">
+      <Filter>xrot</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xrot.h">
+      <Filter>xrot</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
