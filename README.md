@@ -1,42 +1,39 @@
-# cipher.sakura
+# cipher.mrsa
 
-#### SAKURA Encryption and Decryption
+#### Mini RSA Encryption and Decryption
 
 ## About
 
-A hacked together derivative of AES ECB block cipher.
+Simple implementation of Mini RSA.
 
 ## Example
 
 ```cpp
-#include "sakura.h"
+#include "mrsa.h"
 
 #include <string>
 #include <iostream>
 
-#pragma comment(lib, "sakura.lib")
+#pragma comment(lib, "mrsa.lib")
 
-uint8_t key[]=
+std::string message = "holy ghost";
+
+cipher::mrsa m_rsa;
+
+std::pair<uint32_t, uint32_t> public_key = m_rsa.get_public_key();
+std::pair<uint32_t, uint32_t> private_key = m_rsa.get_private_key();
+
+uint32_t* encoded = m_rsa.encrypt(message, public_key);
+
+for (size_t i = 0; i < (sizeof(encoded) / sizeof(uint32_t)); i++)
 {
-    0xb4, 0xc1, 0xa6, 0x42, 0x2d, 0x20, 0x57, 0x3a, 0xf4, 0xe7, 0x59, 0x6f, 0xd3, 0x39, 0x18, 0xb9,
-    0x21, 0x41, 0xde, 0x35, 0x00, 0xd3, 0x7e, 0x13, 0x63, 0x40, 0x0e, 0xa3, 0xf7, 0x2d, 0x46, 0xf6 
-};
+    std::cout << std::to_string(array[i]) + " ";
+}
 
-uint8_t iv[]=
-{
-    0x1f, 0x80, 0xff, 0xea, 0xcc, 0x5c, 0x98, 0x09, 0xdd, 0x13, 0xbb, 0xd7, 0x90, 0xa0, 0x13, 0x54,
-    0xa3, 0xd5, 0x13, 0x12, 0x0d, 0x05, 0xac, 0xde, 0x40, 0xff, 0x3d, 0x44, 0x3c, 0x61, 0xa1, 0xd6 
-};
+std::cout << std::endl;
 
-char *message = "I see only evil";
-
-cipher::sakura sakura_ecb;
-
-bool en_success = sakura_ecb.encrypt(message, strlen(message), key, iv);
-std::cout << std::to_string(message) << std::endl;
-
-bool de_success = sakura_ecb.decrypt(message, strlen(message), key, iv);
-std::cout << std::to_string(message) << std::endl;
+std::string decoded = m_rsa.decrypt(encoded, private_key);
+std::cout << decoded << std::endl;
 ```
 
 
