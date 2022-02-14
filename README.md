@@ -1,34 +1,44 @@
-# cipher.xrot
+# cipher.sakura
 
-#### XOR-ROT Encryption and Decryption
+#### SAKURA Encryption and Decryption
 
 ## About
 
-The goal of xrot is to create a small and portable library for the cipher without heavily focusing on additional programming weight. The library is a small sub library from my personal cipher library. This was originally part of my shabak challege code for the first homebase challenge.
-
-The entire shabak challenge was completed in three days with two challenges each day from both homebase and airplane. I started April 28th, 2017 @ 10:00 PM and ended April 29th, 2017 @ 1:43 AM. The additional challenge deceptionisland was released through targeted newpapers and locations; these contained a series of web exploit challenges and all were completed the follwing day under the alias "ez".
-
-The Israel Security Agency launched a unique recruitment campaign, via their homepage, Thursday (April 27th, 2017), which  allowed the general public, as well as potential candidates for a career in their security service, to challenge themselves. The ISA has a desire to recruit the best minds from cyberspace and technology in Israel by presenting this particular challenge in fan-fiction spin off of "Rick and Morty". People who solve the challenges will be invited to apply for one of the unique technological posts at the forefront of technology and to integrate into the unique and new development tracks and careers offered by the ISA to these candidates. Shabak notes that all those interested in developing a career in the security service will significantly shorten the process of applying for various positions, so that within a few minutes a candidate can complete the process in a simple and user-friendly way.
-
+A hacked together derivative of AES ECB block cipher.
 
 ## Example
 
 ```cpp
-#include "xrot.h"
+#include "sakura.h"
 
 #include <string>
 #include <iostream>
 
-#pragma comment(lib, "xrot.lib")
+#pragma comment(lib, "sakura.lib")
 
-std::vector<unsigned char> x = { 127, 30 };
-cipher::xrot vtr_xrt(x);
+uint8_t key[]=
+{
+    0xb4, 0xc1, 0xa6, 0x42, 0x2d, 0x20, 0x57, 0x3a, 0xf4, 0xe7, 0x59, 0x6f, 0xd3, 0x39, 0x18, 0xb9,
+    0x21, 0x41, 0xde, 0x35, 0x00, 0xd3, 0x7e, 0x13, 0x63, 0x40, 0x0e, 0xa3, 0xf7, 0x2d, 0x46, 0xf6 
+};
 
-std::vector<unsigned char> vtr_encoded = vtr_xrt.encrypt(text_string);
-std::cout << "encoded: " << std::string(vtr_encoded.begin(), vtr_encoded.end()) << std::endl;
+uint8_t iv[]=
+{
+    0x1f, 0x80, 0xff, 0xea, 0xcc, 0x5c, 0x98, 0x09, 0xdd, 0x13, 0xbb, 0xd7, 0x90, 0xa0, 0x13, 0x54,
+    0xa3, 0xd5, 0x13, 0x12, 0x0d, 0x05, 0xac, 0xde, 0x40, 0xff, 0x3d, 0x44, 0x3c, 0x61, 0xa1, 0xd6 
+};
 
-std::cout << "decoded: " << vtr_xrt.decrypt(vtr_encoded) << std::endl;
+char *message = "I see only evil";
+
+cipher::sakura sakura_ecb;
+
+bool en_success = sakura_ecb.encrypt(message, strlen(message), key, iv);
+std::cout << std::to_string(message) << std::endl;
+
+bool de_success = sakura_ecb.decrypt(message, strlen(message), key, iv);
+std::cout << std::to_string(message) << std::endl;
 ```
+
 
 ## License
 
