@@ -11,6 +11,7 @@ A collection of cipher algorithms.
 * [atbash](https://github.com/dove-zp/library.ciphers/tree/atbash)
 * [avgad](https://github.com/dove-zp/library.ciphers/tree/avgad)
 * [caesar](https://github.com/dove-zp/library.ciphers/tree/caesar)
+* [mrsa](https://github.com/dove-zp/library.ciphers/tree/mrsa)
 * [rc4](https://github.com/dove-zp/library.ciphers/tree/rc4)
 * [sakura](https://github.com/dove-zp/library.ciphers/tree/sakura)
 * [tears](https://github.com/dove-zp/library.ciphers/tree/tears)
